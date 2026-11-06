@@ -1,0 +1,10 @@
+show(5)    prints: 1 2 3 4 5 
+mystery(13) = 3  (calls=5, max depth=5)
+count_free linear : result=6 calls=11 max depth=11
+count_free split  : result=6 calls=19 max depth=5
+count_free loop   : result=6 (0 extra calls, 1 stack frame)
+n= 1  linear: calls= 2 depth= 2 | split: calls= 1 depth=1
+n= 2  linear: calls= 3 depth= 3 | split: calls= 3 depth=2
+n= 4  linear: calls= 5 depth= 5 | split: calls= 7 depth=3
+n= 8  linear: calls= 9 depth= 9 | split: calls=15 depth=4
+n=16  linear: calls=17 depth=17 | split: calls=31 depth=5

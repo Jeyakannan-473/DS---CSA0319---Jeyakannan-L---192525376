@@ -1,0 +1,1 @@
+sizeof(HNode)=16 sizeof(HNode*)=8 sizeof(Parking)=48

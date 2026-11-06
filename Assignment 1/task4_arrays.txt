@@ -1,0 +1,12 @@
+Q1: 5 15 25
+Q2: 20 15
+Q3: 3
+Q4: byte distance a[4]-a[1] = 12
+Q5: sizeof(a)=20  sizeof(int*)=8  elements=5
+Q6: decay test
+  in main         : sizeof(a)   = 20
+  inside function : sizeof(arr) = 8   (arr is really int*; n = 5)
+Q7: m[2][1]=9  *(*(m+1)+2)=6  *(&m[0][0]+7)=7
+Q8: sizeof(m)=48 sizeof(m[0])=16 sizeof(m[0][0])=4
+Q9: byte offset of m[2][1] from m[0][0] = 36 (formula (2*4+1)*4 = 36)
+Q10: flat index of (floor 5, slot 7321) = 5*10000+7321 = 57321

@@ -1,0 +1,9 @@
+slots                    : 80000
+int array payload bytes  : 320000
+bitmap payload bytes     : 10000
+occupied (bitmap)        : 26667
+occupied (int array)     : 26667
+slot 3 / 4 / 79999       : 1 0 1
+first free slot          : 0
+saving                   : 96.88 %
+python 3.12.3

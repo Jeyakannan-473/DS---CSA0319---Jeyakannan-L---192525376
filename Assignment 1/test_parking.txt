@@ -1,0 +1,33 @@
+=== A. empty lot (5 slots) ===
+[PASS] free_count after init                            expected=  5 actual=  5
+[PASS] leave on a free slot -> PK_EMPTYSLOT             expected= -4 actual= -4
+[PASS] lookup in empty lot -> PK_NOTFOUND               expected= -1 actual= -1
+[PASS] leave slot -1 -> PK_BADSLOT                      expected= -3 actual= -3
+[PASS] leave slot 5 (== nslots) -> PK_BADSLOT           expected= -3 actual= -3
+=== B. full lot ===
+[PASS] free_count when full                             expected=  0 actual=  0
+[PASS] park into full lot -> PK_FULL                    expected= -1 actual= -1
+[PASS] invariants hold when full                        expected=  1 actual=  1
+=== C. first and last slot ===
+[PASS] first slot (0) holds vehicle 101                 expected=101 actual=101
+[PASS] last slot (4) holds vehicle 105                  expected=105 actual=105
+[PASS] lookup of left vehicle 101 -> PK_NOTFOUND        expected= -1 actual= -1
+[PASS] re-park: last freed slot (4) is reused first     expected=  4 actual=  4
+[PASS] duplicate park of 777 -> PK_DUPLICATE            expected= -2 actual= -2
+[PASS] free_count                                       expected=  1 actual=  1
+[PASS] invariants hold                                  expected=  1 actual=  1
+=== D. ten-event sequence (4-slot lot) ===
+[PASS] E1  park 101           -> slot                   expected=  0 actual=  0
+[PASS] E2  park 102           -> slot                   expected=  1 actual=  1
+[PASS] E3  park 103           -> slot                   expected=  2 actual=  2
+[PASS] E4  leave slot 1       -> vehicle                expected=102 actual=102
+[PASS] E5  park 104           -> slot (reuses 1)        expected=  1 actual=  1
+[PASS] E6  park 105           -> slot                   expected=  3 actual=  3
+[PASS] E7  park 106 (lot full)-> PK_FULL                expected= -1 actual= -1
+[PASS] E8  lookup 103         -> slot                   expected=  2 actual=  2
+[PASS] E9  leave slot 0       -> vehicle                expected=101 actual=101
+[PASS] E10 lookup 101         -> PK_NOTFOUND            expected= -1 actual= -1
+[PASS] final free_count                                 expected=  1 actual=  1
+[PASS] final invariants                                 expected=  1 actual=  1
+
+Summary: 27 / 27 tests passed

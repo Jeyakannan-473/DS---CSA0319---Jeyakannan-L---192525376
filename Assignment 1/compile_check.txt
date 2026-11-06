@@ -1,0 +1,5 @@
+parking.c: 0 warnings
+hashmap.c: 0 warnings
+slotlist.c: 0 warnings
+parking2.c: 0 warnings
+test_parking.c: 0 warnings

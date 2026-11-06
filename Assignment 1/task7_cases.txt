@@ -1,0 +1,4 @@
+n=1023 LINEAR  best=1 worst=1023 average(successful)=512.0 (n+1)/2=512.0
+n=1023 LINEAR  unsuccessful search = 1023 comparisons
+n=1023 BINARY  best=1 worst=10 average(successful)=9.010  (log2(n+1)=10)
+binary search for 2 in UNSORTED array {7,1,9,3,5,2,8,4}: returned -1 (2 is really at index 5) -> wrong

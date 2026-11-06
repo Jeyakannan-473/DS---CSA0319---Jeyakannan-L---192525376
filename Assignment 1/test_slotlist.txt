@@ -1,0 +1,28 @@
+--- empty-list tests ---
+[PASS] delete from empty list -> SL_EMPTY             expected=-3 actual=-3
+[PASS] insert at pos 1 in empty list -> SL_BADPOS     expected=-2 actual=-2
+[PASS] insert at pos -1 -> SL_BADPOS                  expected=-2 actual=-2
+--- normal inserts ---
+[PASS] insert 10 at pos 0 (empty)                     expected= 0 actual= 0
+[PASS] insert 30 at end (pos 1)                       expected= 0 actual= 0
+[PASS] insert 20 in middle (pos 1)                    expected= 0 actual= 0
+[PASS] insert 5 at front (pos 0)                      expected= 0 actual= 0
+list = [5, 10, 20, 30]   (expected [5, 10, 20, 30])
+[PASS] insert 40 at end -> list now full              expected= 0 actual= 0
+--- full-list tests ---
+[PASS] insert into full list -> SL_FULL               expected=-1 actual=-1
+[PASS] size unchanged after failed insert             expected= 5 actual= 5
+--- invalid-position deletes ---
+[PASS] delete pos 5 (== size) -> SL_BADPOS            expected=-2 actual=-2
+[PASS] delete pos -1 -> SL_BADPOS                     expected=-2 actual=-2
+--- deletes: first, middle, last ---
+[PASS] delete first (pos 0)                           expected= 0 actual= 0
+[PASS]   removed value                                expected= 5 actual= 5
+[PASS] delete middle (pos 1)                          expected= 0 actual= 0
+[PASS]   removed value                                expected=20 actual=20
+[PASS] delete last (pos 2)                            expected= 0 actual= 0
+[PASS]   removed value                                expected=40 actual=40
+list = [10, 30]   (expected [10, 30])
+[PASS] size after three deletes                       expected= 2 actual= 2
+
+Summary: 19 / 19 tests passed

@@ -1,0 +1,6 @@
+sizeof(int)                      = 4 bytes
+sizeof(int[80000])               = 320000 bytes
+sizeof(unsigned char[10000])     = 10000 bytes (bitmap, 1 bit per slot)
+ratio int array / bitmap         = 32
+bitmap test: occupied=26667 (expected 26667 - 1 + 1 = 26667), slot 3 -> 1, slot 4 -> 0, slot 79999 -> 1
+recursive count over 80000 slots: result=26667, max depth=80001 frames, stack used ~ 5120000 bytes (64.0 bytes/frame)

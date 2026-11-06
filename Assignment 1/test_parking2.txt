@@ -1,0 +1,32 @@
+layout: reserved {0,1}  EV {3,7,11}  normal {2,4,5,6,8,9,10}
+[PASS] register pass 501 -> reserved slot                       expected=  0 actual=  0
+[PASS] register pass 502 -> reserved slot                       expected=  1 actual=  1
+[PASS] register pass 503 -> none left (-1)                      expected= -1 actual= -1
+[PASS] register pass 501 again -> already holder (-2)           expected= -2 actual= -2
+[PASS] normal car 201 gets nearest NORMAL slot                  expected=  2 actual=  2
+[PASS] normal car 202 skips EV slot 3, gets 4                   expected=  4 actual=  4
+[PASS] EV car 301 gets nearest EV slot                          expected=  3 actual=  3
+[PASS] pass holder 501 gets reserved slot 0                     expected=  0 actual=  0
+[PASS] normal car 204 gets slot 5                               expected=  5 actual=  5
+[PASS] leave slot 2 -> vehicle 201                              expected=201 actual=201
+[PASS] leave slot 4 -> vehicle 202                              expected=202 actual=202
+[PASS] car 205: NEAREST free slot is 2 (v1 stack would give 4)  expected=  2 actual=  2
+[PASS] EV car 302 gets EV slot 7                                expected=  7 actual=  7
+[PASS] EV car 303 gets EV slot 11                               expected= 11 actual= 11
+[PASS] EV car 304 (no EV slot left) falls back to normal 4      expected=  4 actual=  4
+[PASS] normal car 206 -> 6                                      expected=  6 actual=  6
+[PASS] normal car 207 -> 8                                      expected=  8 actual=  8
+[PASS] normal car 208 -> 9                                      expected=  9 actual=  9
+[PASS] normal car 209 -> 10                                     expected= 10 actual= 10
+[PASS] normal car 210: no normal slot -> PK_FULL                expected= -1 actual= -1
+[PASS] free_count before 502 parks (reserved slot 1 is free)    expected=  1 actual=  1
+[PASS] pass holder 502 parks in reserved slot 1                 expected=  1 actual=  1
+[PASS] free_count when completely full                          expected=  0 actual=  0
+[PASS] invariants hold                                          expected=  1 actual=  1
+[PASS] leave EV slot 3 -> vehicle 301                           expected=301 actual=301
+[PASS] non-EV car 211 may NOT take the free EV slot             expected= -1 actual= -1
+[PASS] EV car 305 takes EV slot 3                               expected=  3 actual=  3
+[PASS] lookup 305 -> slot                                       expected=  3 actual=  3
+[PASS] invariants hold at end                                   expected=  1 actual=  1
+
+Summary: 29 / 29 tests passed
