@@ -1,0 +1,43 @@
+PART A - operations on a 10-key tree
+insert 50  comparisons = 0
+insert 30  comparisons = 1
+insert 70  comparisons = 1
+insert 20  comparisons = 2
+insert 40  comparisons = 2
+insert 60  comparisons = 2
+insert 80  comparisons = 2
+insert 35  comparisons = 3
+insert 45  comparisons = 3
+insert 65  comparisons = 3
+initial tree                 50(30(20,40(35,45)),70(60(-,65),80))   [size 10, height 3]
+inorder   : 20 30 35 40 45 50 60 65 70 80
+preorder  : 50 30 20 40 35 45 70 60 65 80
+postorder : 20 35 45 40 30 65 60 80 70 50
+levelorder: 50 30 70 20 40 60 80 35 45 65
+min = 20, max = 80
+search 45  -> found     comparisons = 4
+search 65  -> found     comparisons = 4
+search 99  -> not found comparisons = 3
+search 10  -> not found comparisons = 3
+
+Deletion cases
+delete 20  -> case 1 (leaf)
+  tree now                   50(30(-,40(35,45)),70(60(-,65),80))   [size 9, height 3]
+delete 30  -> case 2 (one child)
+  tree now                   50(40(35,45),70(60(-,65),80))   [size 8, height 3]
+delete 50  -> case 3 (two children)
+  tree now                   60(40(35,45),70(65,80))   [size 7, height 2]
+delete 99  -> case 0 (absent)
+valid BST after deletions: yes
+
+PART B - boundary tests
+empty tree: height = -1, size = 0, search(5) = not found, delete(5) = 0, min = none
+empty tree traversal output: ""
+insert 10 -> 1, insert 10 again -> 0 (duplicate rejected), size = 1
+delete 10 (only node) -> case 1, tree is empty, height = -1
+extreme keys: min = -2147483648, max = 2147483647, size = 3
+search INT_MIN = found, search INT_MAX = found, search -1 = not found
+
+PART C - 100000 random operations against a model (keys 0..999)
+insertions accepted = 16950, deletions done = 16464, successful searches = 16468
+final size = 486 (model 486), height = 15, mismatches with the model = 0

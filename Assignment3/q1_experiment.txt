@@ -1,0 +1,13 @@
+n        insert order height   build cmps     avg search cmp theory avg   build ms    
+1000     random       21       10948          11.95          11.99        0.05        
+1000     ascending    999      499500         500.50         500.50       0.94        
+10000    random       31       161068         17.11          16.58        0.67        
+10000    ascending    9999     49995000       5000.50        5000.50      262.95      
+30000    random       37       512485         18.08          18.77        2.71        
+30000    ascending    29999    449985000      15000.50       15000.50     3372.75     
+
+Alternative: sorted array with binary search, n inserts in random order
+n        BST build (ms)         sorted-array build (ms) array avg search cmp
+1000     0.04                   0.06                   8.99              
+10000    0.61                   1.14                   12.36             
+30000    2.56                   12.12                  13.91             
